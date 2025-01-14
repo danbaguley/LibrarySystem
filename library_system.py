@@ -6,7 +6,7 @@ class LibrarySystem:
     def __init__(self):
         self.library = Library()
 
-    
+
     def library_menu(self):
 
         running = True
@@ -14,12 +14,13 @@ class LibrarySystem:
         while running == True:
             print("Welcome to the library system.")
             print("------------------------------")
-            user_input = input("Please select an option from below:")
             print("1 - Add a new book")
             print("2 - Lend a book to a member")
             print("3 - Mark a book as returned")
             print("4 - Register a new member")
             print("9 - Exit program")
+            print("------------------------------")
+            user_input = input("Please select an option from above: ")
 
             user_int = int(user_input)
 
@@ -52,8 +53,8 @@ class LibrarySystem:
         self.library.add_member(member_2)
 
     def execute(self):
-        self.library_test()
-        self.library.display_books()
-        self.library.display_members()
+        self.library_menu()
+        #self.library_test()
+    
 
 
