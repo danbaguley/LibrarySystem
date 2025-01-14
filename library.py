@@ -1,8 +1,8 @@
 class Book:
-    def __init__(self, title, author, avaliable):
+    def __init__(self, title, author, available):
         self.title = title
         self.author = author
-        self.avaliable = avaliable
+        self.available = available
 
 
 class Member:
@@ -18,15 +18,14 @@ class Library:
         self.members = []
 
     def add_book(self, book):
-        book.avaliabe = True
         self.books.append(book)
 
     def add_member(self, member):
         self.members.append(member)
 
     def lend_book(self, book, member):
-        if book.avaliable == True:
-            book.avaliable = False
+        if book.available == True:
+            book.available = False
             member.borrowed_books.append(book)
             print(f"{book.title} has been lent to {member.name}")
         else:
@@ -34,7 +33,10 @@ class Library:
 
     def display_books(self): 
         for book in self.books: 
-            status = 'Available' if book.available else 'Not available' 
+            if book.available == True:
+                status = 'Available' 
+            else:
+                status = 'Not available' 
             print(f"{book.title} by {book.author} - {status}")
 
     def return_book(self, book, member):
@@ -48,8 +50,8 @@ class Library:
 
 library = Library()
 
-book_1 = Book("A Game of Thrones", "George RR Martin")
-book_2 = Book("The Winds of Winter", "George RR Martin")
+book_1 = Book("A Game of Thrones", "George RR Martin", True)
+book_2 = Book("The Winds of Winter", "George RR Martin", True)
 
 member_1 = Member(1, "Dan")
 member_2 = Member(2, "John")
@@ -57,8 +59,13 @@ member_2 = Member(2, "John")
 library.add_book(book_1)
 library.add_book(book_2)
 
+library.display_books()
 
 library.add_member(member_1)
 library.add_member(member_2)
 
+
+
 library.lend_book(book_1, member_1)
+
+library.display_books()
