@@ -39,6 +39,10 @@ class Library:
                 status = 'Not available' 
             print(f"{book.title} by {book.author} - {status}")
 
+    def display_members(self): 
+        for member in self.members: 
+           print(f"Name: {member.name}, ID: {member.member_id}")  
+
     def return_book(self, book, member):
         if book in member.borrowed_books:
             book.available = True
@@ -56,19 +60,23 @@ book_2 = Book("The Winds of Winter", "George RR Martin", True)
 member_1 = Member(1, "Dan")
 member_2 = Member(2, "John")
 
+
+
 library.add_book(book_1)
 library.add_book(book_2)
 
-library.display_books()
+#library.display_books()
 
 library.add_member(member_1)
 library.add_member(member_2)
 
+library.display_members()
+
 
 library.lend_book(book_1, member_1)
 
-library.display_books()
+#library.display_books()
 
 library.return_book(book_1, member_1)
 
-library.display_books()
+#library.display_books()
