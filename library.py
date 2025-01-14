@@ -65,7 +65,10 @@ library.add_member(member_1)
 library.add_member(member_2)
 
 
-
 library.lend_book(book_1, member_1)
+
+library.display_books()
+
+library.return_book(book_1, member_1)
 
 library.display_books()
