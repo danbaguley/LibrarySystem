@@ -32,6 +32,10 @@ class Library:
         else:
             print(f"Sorry, {book.title} is not available for lending")
 
+    def display_books(self): 
+        for book in self.books: 
+            status = 'Available' if book.available else 'Not available' 
+            print(f"{book.title} by {book.author} - {status}")
 
     def return_book(self, book, member):
         if book in member.borrowed_books:
