@@ -1,16 +1,6 @@
-class Book:
-    def __init__(self, title, author, available):
-        self.title = title
-        self.author = author
-        self.available = available
 
-
-class Member:
-    def __init__(self, member_id, name):
-        self.member_id = member_id
-        self.name = name
-        self.borrowed_books = []
-
+from book import Book 
+from member import Member
 
 class Library:
     def __init__(self):
