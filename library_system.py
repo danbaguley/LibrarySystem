@@ -39,7 +39,7 @@ class LibrarySystem:
                 print("Invalid Input")
         
 
-    #Func to test whether things work
+    #Func to test whether things work un comment in execute function to use, make sure you comment out the library menu function if you want to use this
     def library_test(self): 
         book_1 = Book("A Game of Thrones", "George RR Martin", True) 
         book_2 = Book("The Winds of Winter", "George RR Martin", True) 
@@ -51,6 +51,16 @@ class LibrarySystem:
         self.library.add_book(book_2) 
         self.library.add_member(member_1) 
         self.library.add_member(member_2)
+
+        self.library.lend_book(book_1, member_1)
+
+        self.library.display_books()
+
+        self.library.return_book(book_1, member_1)
+
+        self.library.display_books()
+
+        self.library.display_members()
 
     def execute(self):
         self.library_menu()
